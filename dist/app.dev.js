@@ -171,90 +171,64 @@ startBtn.onclick = function () {
   } else {
     elemParent.className = "hide-elem";
   }
-};
-
-var oneDiv = document.createElement("div"); //looping through QUESTIONS
-
-QUESTIONS.forEach(function (quizQuestion) {
-  //creation of multiple tags
-  var li = document.createElement("li");
-  var p = document.createElement("p");
-  var div = document.createElement("div");
-  div.className = "divider";
-  var spanBtn = document.createElement("span");
-  var nextBtn = document.createElement("button");
-  var next = document.createTextNode = "Next »";
-  p.setAttribute("class", "question");
-  p.textContent = quizQuestion.question;
-  nextBtn.textContent = next; //appending my element according to my satisfaction
-
-  li.appendChild(p);
-  spanBtn.appendChild(nextBtn);
-  div.appendChild(li);
-
-  spanBtn.onclick = function () {
-    console.log(ol.removeChild(div));
-  }; //looping through QUESTION.answers, after question has been looped through to access the values of answer
-  //creation of new tags to access my answers
+}; //let randomQuestions = Math.floor(QUESTIONS.length - 1 * Math.random())
+//let randomQuestions = Math.floor(8 * Math.random())
 
 
-  quizQuestion.answers.map(function (elem) {
-    var p2 = document.createElement("p");
-    p2.setAttribute("class", "ans");
-    p2.textContent = elem.text; //appending my element according to my satisfaction
+var randomQuestions = Math.floor(Math.random() * QUESTIONS.length);
+var shuffleQuestion = QUESTIONS[randomQuestions];
+var div = document.createElement("div");
+var oneDiv = document.createElement("div");
+var li = document.createElement("li");
+var spanBtn = document.createElement("span");
+var nextBtn = document.createElement("button");
+nextBtn.setAttribute("class", "next-btn");
+var next = document.createTextNode = "Next »";
+var p = document.createElement("p");
+div.className = "divider";
+p.setAttribute("class", "question"); //I want multiple random questions..but its only giving me question one
 
-    li.appendChild(p2);
-    div.appendChild(li); //deciding which is wrong from right
+p.textContent = shuffleQuestion.question;
+li.appendChild(p);
+spanBtn.appendChild(nextBtn);
+div.appendChild(li);
+ol.appendChild(spanBtn);
+nextBtn.textContent = next; //looping through QUESTION.answers
+//creation of new tags to access my answers
 
-    p2.onclick = function () {
-      if (elem.correct === true) {
-        p2.style.background = "green";
-      } else {
-        p2.style.background = "red";
-      }
-    };
-  });
-  ol.appendChild(div);
-  ol.appendChild(spanBtn);
-  /*let counter = () => {
-      div++;
-      div = document.getElementById("divider")
-  
-  }
-  counter()*/
-}); //let shuffleQuiz = div.toString().split(",")
+shuffleQuestion.answers.map(function (elem) {
+  var button = document.createElement("button");
+  button.setAttribute("class", "ans");
+  button.textContent = elem.text; //appending my element according to my satisfaction
 
-/*let shuffleQuiz = []
-for (let i = 0; i < div.length; i++){
-     if(div){
-         shuffleQuiz.push(div[i]);
-         continue
-     }
-     shuffleQuiz.push(div[i].outerHTML)
-     console.log(shuffleQuiz)
-}
+  li.appendChild(button);
+  div.appendChild(li); //deciding which is wrong from right
+  //if button is clicked change color, right answer should be green and false should be red 
 
-let quizCounter = 1;
-let l = Math.floor()
+  /*if (elem.correct){
+             button.dataset.correct = elem.correct*/
 
-//console.log(shuffleQuiz) 
+  button.addEventListener("click", ans);
 
-
-
-//displaying random questions on my screen
-
-//turning looping through div and turning it to an array to an array
-
-//button next
-/*nextBtn.addEventListener("click", nextQuestion) 
-
-function nextQuestion (){
-    if(nextBtn){
-        
+  function ans() {
+    if (elem.correct === true) {
+      button.style.background = "green";
+    } else {
+      button.style.background = "red";
     }
-}*/
 
-/**
- * if a random question has been shown and next is clicked delete the random question that was shown and show
- * another question then repeat
- */
+    runOnce = true;
+  }
+
+  if (button.click === true) {
+    button.removeEventListener("click", ans);
+  }
+});
+ol.appendChild(div);
+console.log(ol);
+
+spanBtn.onclick = function () {
+  if (spanBtn) {
+    div.removeChild(div.firstChild); // div.replaceChild(li)
+  }
+};

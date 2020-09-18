@@ -61,22 +61,23 @@ $theme-colors: (
       color: rgb(126, 24, 24);
     }
 
-.ol button{
+.next-btn{
     border-radius: 5px;
     border: 1px ridge rgb(255, 30, 0);
-    padding: 10px;
+    padding: 0px;
     width: 80px;
     height: 40px;
-    margin-top: 90px;
-    margin-left: 500px;
     background-color: map-get($theme-colors, success);
     font-family: 'Architects Daughter', cursive;
     color: rgb(235, 235, 230);
+    //position: relative;
+    top: 320px;
+    left: 200px;
 }
 
- button:hover{
+ /*button:hover{
     color: yellow;
-}
+}*/
 
   .hide-elem{
        display: none;

@@ -54,23 +54,22 @@
   color: #7e1818;
 }
 
-.ol button {
+.next-btn {
   border-radius: 5px;
   border: 1px ridge #ff1e00;
-  padding: 10px;
+  padding: 0px;
   width: 80px;
   height: 40px;
-  margin-top: 90px;
-  margin-left: 500px;
   background-color: #5cb85c;
   font-family: "Architects Daughter", cursive;
   color: #ebebe6;
+  top: 320px;
+  left: 200px;
 }
 
-button:hover {
-  color: yellow;
-}
-
+/*button:hover{
+    color: yellow;
+}*/
 .hide-elem {
   display: none;
 }

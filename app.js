@@ -102,6 +102,10 @@ const elemParent = document.querySelector("#hide")
 const parent = document.querySelector("#ol-access")
 let ol = document.querySelector("#list")
 
+
+
+
+
 /**
  * when start button is clicked show questions and delete start
  */
@@ -115,123 +119,87 @@ startBtn.onclick = () => {
     }
 }
 
+//let randomQuestions = Math.floor(QUESTIONS.length - 1 * Math.random())
+//let randomQuestions = Math.floor(8 * Math.random())
+let randomQuestions = Math.floor(Math.random() * QUESTIONS.length)
 
+let shuffleQuestion = QUESTIONS[randomQuestions]
 
- 
-
-
-let oneDiv = document.createElement("div")
-//looping through QUESTIONS
-QUESTIONS.forEach((quizQuestion) => {
-//creation of multiple tags
-let li = document.createElement("li")
-let p = document.createElement("p")
 let div = document.createElement("div")
-div.className = "divider"
+let oneDiv = document.createElement("div")
+let li = document.createElement("li")
+
 const spanBtn = document.createElement("span")
-const nextBtn = document.createElement("button")
+const nextBtn = document .createElement("button")
+nextBtn.setAttribute("class", "next-btn")
 const next = document.createTextNode = ("Next »")
 
-
+let p = document.createElement("p")
+div.className = "divider"
 p.setAttribute("class", "question")
-p.textContent = quizQuestion.question
+//I want multiple random questions..but its only giving me question one
+p.textContent = shuffleQuestion.question
 
-nextBtn.textContent = next
-//appending my element according to my satisfaction
+
 li.appendChild(p)
 spanBtn.appendChild(nextBtn)
 div.appendChild(li)
 
-spanBtn.onclick = () => {
-    console.log(ol.removeChild(div))
- }
+ol.appendChild(spanBtn)
 
-//looping through QUESTION.answers, after question has been looped through to access the values of answer
+nextBtn.textContent = next
+
+
+//looping through QUESTION.answers
 //creation of new tags to access my answers
-quizQuestion.answers.map((elem) => {
-    let p2 = document.createElement("p")
-    p2.setAttribute("class", "ans")
-    p2.textContent = elem.text
+shuffleQuestion.answers.map((elem) => {
+    let button = document.createElement("button")
+    button.setAttribute("class", "ans")
+    
+    button.textContent = elem.text
     //appending my element according to my satisfaction
-    li.appendChild(p2)
+    li.appendChild(button)
     div.appendChild(li)
 
       //deciding which is wrong from right
-
-    p2.onclick = () => {
-        if(elem.correct === true){
-                p2.style.background = "green"
+      //if button is clicked change color, right answer should be green and false should be red 
+ /*if (elem.correct){
+            button.dataset.correct = elem.correct*/
+          button.addEventListener("click", ans)  
+    function ans () {
+            if(elem.correct === true){
+                button.style.background = "green"
         }else{
-            p2.style.background = "red"
+            button.style.background = "red"
         }
+        runOnce = true
     }
+    if (button.click === true){
+        button.removeEventListener("click", ans)
+    }
+
+    
+     
+
+    
 })
+
 ol.appendChild(div)
-ol.appendChild(spanBtn)
-
-/*let counter = () => {
-    div++;
-    div = document.getElementById("divider")
-
-}
-counter()*/
 
 
 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//let shuffleQuiz = div.toString().split(",")
-/*let shuffleQuiz = []
-for (let i = 0; i < div.length; i++){
-     if(div){
-         shuffleQuiz.push(div[i]);
-         continue
-     }
-     shuffleQuiz.push(div[i].outerHTML)
-     console.log(shuffleQuiz)
-}
-
-let quizCounter = 1;
-let l = Math.floor()
-
-//console.log(shuffleQuiz) 
-
-
-
-//displaying random questions on my screen
-
-//turning looping through div and turning it to an array to an array
-
-//button next
-/*nextBtn.addEventListener("click", nextQuestion) 
-
-function nextQuestion (){
-    if(nextBtn){
+ console.log(ol)
+spanBtn.onclick = () =>{ 
+    if(spanBtn){
+        div.removeChild(div.firstChild)
+       // div.replaceChild(li)
+        }
         
-    }
-}*/
-/**
- * if a random question has been shown and next is clicked delete the random question that was shown and show
- * another question then repeat
- */
+}
+
+
+
+
+
+
 
