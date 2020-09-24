@@ -1,7 +1,5 @@
 //questions
 //This is a json object, you should move this to a seprate json file and import that json file here.
-//questions
-//This is a json object, you should move this to a seprate json file and import that json file here.
 const  QUESTIONS = [
     {
         question: "Imo, Where's the best Website for learning how to code?",
@@ -96,20 +94,20 @@ const  QUESTIONS = [
             {text:"W3school", correct: false},
         ]
     },
-]
+] 
+
 
 
 
 //Function to generate random questions
 let generateQuestions = () =>{
     let randomQuestions = Math.floor((QUESTIONS.length - 1) * Math.random())
+    console.log(randomQuestions)
     let shuffleQuestion = QUESTIONS[randomQuestions]
+    console.log(shuffleQuestion)
     return shuffleQuestion
 
 }
-
-//variable for score counter
-let score = 0;
 
 //function to display question
 
@@ -127,24 +125,11 @@ let displayQuestions = () => {
     let shuffledQuestion = generateQuestions()
     question.textContent = shuffledQuestion.question
     let answers = document.createElement("div")
-    let scoreTag = document.createElement("p")
-    scoreTag.textContent = 'Score:' + score
-    appSection.appendChild(scoreTag)
-
     shuffledQuestion.answers.map((elem) => {
     let button = document.createElement("button")
     button.setAttribute("class", "ans")
     button.textContent = elem.text
     answers.appendChild(button)
-    button.onclick = () => {      
-        if(elem.correct === true){
-            score = score + 1
-            button.style.background = "green"
-        }else{
-            button.style.background = "red"
-            }
-          
-    }
     })
 
     div2.appendChild(nextButton)
@@ -152,33 +137,6 @@ let displayQuestions = () => {
     div2.appendChild(answers)
     appSection.appendChild(div2)
 }
-
-//function for keeping track of the score
-/*let trackScore = (questions) => {
-  
-   /* for(let i = 0; i < questions.length; i++ ){ 
-    if(question[i].answers.correct === true){
-        score = score + 1
-        button.style.background = "green"
-        }else{
-            button.style.background = "red"
-        }*
-    }
-}*/
-
-//set click to once
- 
-/*const buttonClicked = () => {
-displayQuestions()
-let clicked = false
-  if (!clicked) {
-      clicked = true
-  }
-button.onclick = ""
-}
-buttonClicked*/
-
-
 
 //function top display first page.
 
@@ -191,7 +149,6 @@ let displayStart = () =>{
     let p2 = document.createElement("p")
     p2.textContent = "Total number of questions: 9"
     let startButton = document.createElement("button")
-    //startButton.setAttribute("")
     startButton.textContent = "start"
     startButton.onclick = displayQuestions 
     div.appendChild(h3)
