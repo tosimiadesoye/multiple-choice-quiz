@@ -133,18 +133,31 @@ let displayQuestions = () => {
 
     shuffledQuestion.answers.map((elem) => {
     let button = document.createElement("button")
-    button.setAttribute("class", "ans")
+    button.setAttribute("class", "ans")  
     button.textContent = elem.text
     answers.appendChild(button)
-    button.onclick = () => {      
+    
+   
+    button.onclick = () => {
+        let btnClass = document.getElementsByClassName("ans")
+    for(let i = 0; i < btnClass.length; i++){
+        console.log(btnClass[i])
+        if (btnClass[i]){
+            btnClass[i].disabled = true
+        }else{
+            btnClass[i].disabled = ""
+    }
+}
+         
         if(elem.correct === true){
             score = score + 1
-            button.style.background = "green"
+              button.style.background = "green"         
         }else{
-            button.style.background = "red"
-            }
-          
+            button.style.background = "red"             
+        }
+        
     }
+    
     })
 
     div2.appendChild(nextButton)
@@ -175,8 +188,8 @@ let clicked = false
       clicked = true
   }
 button.onclick = ""
-}
-buttonClicked*/
+}*/
+
 
 
 
