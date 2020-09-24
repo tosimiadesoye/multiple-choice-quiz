@@ -1,7 +1,5 @@
 //questions
-//This is a json object, you should move this to a seprate json file and import that json file here.
-//questions
-//This is a json object, you should move this to a seprate json file and import that json file here.
+//This is a json object, you should move this to a separate json file and import that json file here.
 const  QUESTIONS = [
     {
         question: "Imo, Where's the best Website for learning how to code?",
@@ -25,13 +23,6 @@ const  QUESTIONS = [
         ]
     },
 
-    {
-        question: "I'm a self taught programmer?",
-        answers: [
-            {text:"Yes", correct: true},
-            {text:"No", correct: false},
-        ]
-    },
     {
         question: "In what month did I start learning how to code?",
         answers: [
@@ -138,6 +129,7 @@ let displayQuestions = () => {
     answers.appendChild(button)
     
    
+    //function for keeping track of the score, disabling the button once it's clicked and selecting which is right/wrong
     button.onclick = () => {
         let btnClass = document.getElementsByClassName("ans")
     for(let i = 0; i < btnClass.length; i++){
@@ -147,51 +139,26 @@ let displayQuestions = () => {
         }else{
             btnClass[i].disabled = ""
     }
-}
-         
+}    
         if(elem.correct === true){
             score = score + 1
               button.style.background = "green"         
         }else{
             button.style.background = "red"             
-        }
-        
+        }   
     }
-    
+      
     })
-
+    // show number of correct answers out of total
+    let results = document.createElement("p")
+    results.textContent = score + ' out of ' + QUESTIONS.length;
+    appSection.appendChild(results)
+    
     div2.appendChild(nextButton)
     div2.appendChild(question)
     div2.appendChild(answers)
     appSection.appendChild(div2)
 }
-
-//function for keeping track of the score
-/*let trackScore = (questions) => {
-  
-   /* for(let i = 0; i < questions.length; i++ ){ 
-    if(question[i].answers.correct === true){
-        score = score + 1
-        button.style.background = "green"
-        }else{
-            button.style.background = "red"
-        }*
-    }
-}*/
-
-//set click to once
- 
-/*const buttonClicked = () => {
-displayQuestions()
-let clicked = false
-  if (!clicked) {
-      clicked = true
-  }
-button.onclick = ""
-}*/
-
-
-
 
 //function top display first page.
 
