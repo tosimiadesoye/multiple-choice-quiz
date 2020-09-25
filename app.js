@@ -119,6 +119,7 @@ let displayQuestions = () => {
     question.textContent = shuffledQuestion.question
     let answers = document.createElement("div")
     let scoreTag = document.createElement("p")
+    scoreTag.className = "score"
     scoreTag.textContent = 'Score:' + score
     appSection.appendChild(scoreTag)
 
@@ -171,7 +172,7 @@ let displayStart = () =>{
     let p2 = document.createElement("p")
     p2.textContent = "Total number of questions: 9"
     let startButton = document.createElement("button")
-    //startButton.setAttribute("")
+    startButton.className = "start"
     startButton.textContent = "start"
     startButton.onclick = displayQuestions 
     div.appendChild(h3)
@@ -184,8 +185,6 @@ let displayStart = () =>{
 }
 
  displayStart()
-
-
 
 
 
