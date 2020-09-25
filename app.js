@@ -89,58 +89,70 @@ const  QUESTIONS = [
     },
 ]
 
+let score = 0;
+let lengthArray = QUESTIONS.length;
+//let questionVar;
+//let answerVar;
 
+//function to generate random questions
+const generateQuestions = () =>{
 
-//Function to generate random questions
-let generateQuestions = () =>{
-    let randomQuestions = Math.floor((QUESTIONS.length - 1) * Math.random())
+    let randomQuestions = Math.floor((lengthArray - 1) * Math.random())
     let shuffleQuestion = QUESTIONS[randomQuestions]
+
+  /*if(randomQuestions == lengthArray){
+    lengthArray= lengthArray-1;
+  }else{
+    swap(QUESTIONS[randomQuestions], QUESTIONS[lengthArray])
+    lengthArray = lengthArray-1;
+  }
+*/
+   // swap(randomQuestions, )
+    
+    
     return shuffleQuestion
 
 }
 
-//variable for score counter
-let score = 0;
+
+
+
+
 
 //function to display question
 
-let displayQuestions = () => {
-    //Saurav - In this function, you need to delete previous question, if there is any and display the next question.
-    let appSection = document.getElementById("app")
-    appSection.innerHTML = '';
-    let div2 = document.createElement("div")
-    let nextButton = document.createElement("button")
+let createQuestion = (shuffledQuestion) => {
+    //appSection.removeChild(div2)
+    questionVar = document.createElement("div")
+    questionVar.setAttribute("id", "question")  
     let question = document.createElement("p")
-    nextButton.setAttribute("class", "next-btn")
-    nextButton.textContent = 'next'
-    nextButton.onclick = displayQuestions
     question.setAttribute("class", "question")
-    let shuffledQuestion = generateQuestions()
     question.textContent = shuffledQuestion.question
-    let answers = document.createElement("div")
-    let scoreTag = document.createElement("p")
-    scoreTag.className = "score"
-    scoreTag.textContent = 'Score:' + score
-    appSection.appendChild(scoreTag)
+    questionVar.appendChild(question)
+    
+    return questionVar;
+}
 
+let createAnswers = (shuffledQuestion) => {
+    answerVar = document.createElement("div")
+    answerVar.setAttribute("id","answers")
     shuffledQuestion.answers.map((elem) => {
     let button = document.createElement("button")
+    button.setAttribute("id", "answerButton") 
     button.setAttribute("class", "ans")  
     button.textContent = elem.text
-    answers.appendChild(button)
+    answerVar.appendChild(button) 
     
-   
     //function for keeping track of the score, disabling the button once it's clicked and selecting which is right/wrong
     button.onclick = () => {
         let btnClass = document.getElementsByClassName("ans")
-    for(let i = 0; i < btnClass.length; i++){
-        console.log(btnClass[i])
-        if (btnClass[i]){
+        for(let i = 0; i < btnClass.length; i++){
+       if (btnClass[i]){
             btnClass[i].disabled = true
         }else{
-            btnClass[i].disabled = ""
+           btnClass[i].disabled = ""
     }
-}    
+    }    
         if(elem.correct === true){
             score = score + 1
               button.style.background = "green"         
@@ -148,18 +160,57 @@ let displayQuestions = () => {
             button.style.background = "red"             
         }   
     }
-      
-    })
-    // show number of correct answers out of total
-    let results = document.createElement("p")
-    results.textContent = score + ' out of ' + QUESTIONS.length;
-    appSection.appendChild(results)
+})
     
-    div2.appendChild(nextButton)
-    div2.appendChild(question)
-    div2.appendChild(answers)
-    appSection.appendChild(div2)
+    return answerVar;
+
 }
+
+let createScore = () =>{
+    let scorediv = document.createElement("div")
+    scorediv.setAttribute("id","score")
+    let scoreTag = document.createElement("p")
+    scoreTag.className = "score"
+    scoreTag.textContent = 'Score:' + score
+    scorediv.appendChild(scoreTag)
+    return scorediv;
+}
+
+const createNextButton = () => {
+    let div2 = document.createElement("div2")
+    let nextButton = document.createElement("button")
+    nextButton.setAttribute("class", "next-btn")
+    nextButton.textContent = 'next'
+    nextButton.onclick = displayQuestions
+    //nextButton.onclick = displayAnswers
+    div2.appendChild(nextButton)
+    return div2;
+}  
+
+
+let displayQuestions = () => {
+    let appSection = document.getElementById("app")
+    appSection.innerHTML = '';
+    //if(lengthArray>=0){
+    let shuffledQuestion = generateQuestions()
+    let question = createQuestion(shuffledQuestion);
+    let answer = createAnswers(shuffledQuestion);
+    let nextButton = createNextButton();
+    let scorediv = createScore();
+
+    //Saurav - In this function, you need to delete previous question, if there is any and display the next question.
+
+   
+
+    appSection.appendChild(question).appendChild(answer).appendChild(nextButton).appendChild(scorediv);
+}//else{
+    //let scorediv = createScore();
+    //appSection.appendChild(scorediv);
+//}
+
+//}
+
+
 
 //function top display first page.
 
@@ -174,7 +225,9 @@ let displayStart = () =>{
     let startButton = document.createElement("button")
     startButton.className = "start"
     startButton.textContent = "start"
-    startButton.onclick = displayQuestions 
+    startButton.onclick = displayQuestions
+        
+   // startButton.onclick = displayAnswers 
     div.appendChild(h3)
     div.appendChild(p1)
     div.appendChild(p2)
@@ -182,10 +235,11 @@ let displayStart = () =>{
     //Find the Main div where we need to append the contents
     let appSection = document.getElementById("app")
     appSection.appendChild(div)
+  //  lengthArray = QUESTIONS.length -1;
+
 }
 
  displayStart()
-
 
 
 
