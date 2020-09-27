@@ -19,7 +19,18 @@ $theme-colors: (
     font-family: 'Architects Daughter', cursive;
 }
 
+.start{
+    background-color: map-get($theme-colors, primary);
+    border-radius: 5px;
+    padding: 7px;
+    border:  rgb(39, 34, 26);
+    
+    
+}
 
+.score{
+    margin-top: -120px;
+}
  
 
   .ans{
@@ -59,7 +70,10 @@ $theme-colors: (
 }
 
 
-
+.result{
+    font-size: 30px;
+    margin-top: 70px;
+}
 
 
   
