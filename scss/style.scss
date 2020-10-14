@@ -8,8 +8,8 @@ $theme-colors: (
 
 .app {
     display: inline-block;
-    width: 700px;
-    height: 170px;
+    width: 500px;
+    height: 370px;
     margin: 6px;
     background-color: rgb(253, 253, 253);
     position: relative;
@@ -29,14 +29,14 @@ $theme-colors: (
 }
 
 .score{
-    margin-top: -120px;
+    margin-top: 20px;
 }
  
 
   .ans{
       border: 1px solid rgb(0, 245, 0);
       padding: 7px;
-      margin-right: 20px;
+      margin-right: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px 2px;
       background-color: rgb(224, 51, 195);
@@ -49,7 +49,7 @@ $theme-colors: (
 
   .question{
       padding-bottom: 13px;
-      padding-top: 10px;
+      padding-top: 40px;
       font-size: 20px;
      
       color: rgb(126, 24, 24);
