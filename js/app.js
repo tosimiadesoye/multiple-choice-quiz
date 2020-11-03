@@ -34,6 +34,7 @@ const generateQuestions = () =>{
 //function to create questions
 
 let createQuestion = (shuffledQuestion) => {
+    console.log(shuffledQuestion)
     let questionVar = document.createElement("div")
     questionVar.setAttribute("id", "question")  
     let question = document.createElement("p")

@@ -6,74 +6,57 @@ $theme-colors: (
 );
 @import url('href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"');
 
+body{
+    //width: 350px;
+  margin-top: 125px;
+   display: grid;
+   grid-template-columns: repeat(3);//the fraction unit
+   text-align: center;
+} 
+
 .app {
-    display: inline-block;
-    width: 500px;
-    height: 370px;
-    margin: 6px;
-    background-color: rgb(253, 253, 253);
-    position: relative;
-    top: 150px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px;
-    font-family: 'Architects Daughter', cursive;
+   background-color: rgb(253, 253, 253);
+   //position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
 }
-
 .start{
-    background-color: map-get($theme-colors, primary);
-    border-radius: 5px;
-    padding: 7px;
-    border:  rgb(39, 34, 26);
-    
-    
+  background-color: map-get($theme-colors, primary);
+  border-radius: 5px;
+  padding: 7px;
+  border:  rgb(39, 34, 26);
+  margin-bottom: 10px;  
 }
-
 .score{
-    margin-top: 20px;
+  top: 520px;
 }
- 
-
-  .ans{
-      border: 1px solid rgb(0, 245, 0);
-      padding: 7px;
-      margin-right: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px 2px;
-      background-color: rgb(224, 51, 195);
-      justify-content: center;
-      text-align: center; 
-      display: inline-block; 
-      
-      color: rgb(248, 217, 217);
-  }
-
-  .question{
-      padding-bottom: 13px;
-      padding-top: 40px;
-      font-size: 20px;
-     
-      color: rgb(126, 24, 24);
-    }
-
+.question{
+  padding-bottom: 13px;
+  padding-top: 40px;
+  font-size: 20px;
+  color: rgb(126, 24, 24);
+}
+.ans{
+    padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 0 0px 0px;
+  background-color: rgb(224, 129, 51);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20px 30px;
+  color: rgb(248, 217, 217);
+}
 .next-btn{
-    border-radius: 5px;
-    border: 1px ridge rgb(255, 30, 0);
-    padding: 0px;
-    width: 80px;
-    height: 40px;
-    background-color: map-get($theme-colors, success);
-    font-family: 'Architects Daughter', cursive;
-    color: rgb(235, 235, 230);
-    //position: relative;
-    top: 320px;
-    left: 200px;
+  border-radius: 5px;
+  border: 1px ridge;
+  width: 80px;
+  height: 40px;
+  background-color: map-get($theme-colors, success);
+  color: rgb(235, 235, 230);
+  margin-top: 10px;
 }
-
-
 .result{
-    font-size: 30px;
-    margin-top: 70px;
+  font-size: 30px;
+  margin-top: 70px;
 }
 
-
-  
