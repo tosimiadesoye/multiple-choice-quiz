@@ -23,13 +23,6 @@
     },
 
     {
-        question: "I'm a self taught programmer?",
-        answers: [
-            {text:"Yes", correct: true},
-            {text:"No", correct: false},
-        ]
-    },
-    {
         question: "In what month did I start learning how to code?",
         answers: [
             {text:"June", correct: false},
