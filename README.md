@@ -1,6 +1,6 @@
 # multiple-choice-quiz
 
-https://github.com/user/repo-name#header-name
+https://github.com/tosimiadesoye/multiple-choice-quiz
 
 ## Table of contents
 * [General info](#general-info)
