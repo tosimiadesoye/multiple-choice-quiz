@@ -138,9 +138,9 @@ let displayStart = () =>{
     let h3 = document.createElement("h3")
     h3.textContent = "welcome"
     let p1 = document.createElement("p")
-    p1.textContent = "get to know about my tech journey"
+    p1.textContent = "This application askes random questions"
     let p2 = document.createElement("p")
-    p2.textContent = "Total number of questions: 8"
+    p2.textContent = `Total number of questions is ${lengthArray}`
     let startButton = document.createElement("button")
     startButton.className = "start"
     startButton.textContent = "start"

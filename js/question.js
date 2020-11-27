@@ -1,89 +1,90 @@
  let  QUESTIONS;
  export default QUESTIONS = [
     {
-        question: "Imo, Where's the best Website for learning how to code?",
+         question: `What year did the Titanic sink in the Atlantic Ocean on 15 April,
+         on its maiden voyage from Southampton?`,
         answers: [
-            {text:"Free code camp", correct: true},
-            {text:"Khanacademy", correct: true},
-            {text:"Codecademy", correct: false},
-            {text:"Udacity", correct: false},
-            {text:"Udemy", correct: false},
+            {text:"1912", correct: true},
+            {text:"2020", correct: false},
+            {text:"2015", correct: false},
+            {text:"2019", correct: false},
+            {text:"2000", correct: false},
         ] 
     },
     
     {
-        question: "What's my favourite Youtube channel for learning how to code?",
+        question: " How did Cersi’s child Myrcella die?",
         answers: [
-            {text:"Nella Rose", correct: false},
-            {text:"Naka and Dom", correct: false},
-            {text:"Free Code Camp", correct: true},
-            {text:"HollyWood", correct: false},
-            {text:"The coding train", correct: true},
+            {text:"Cancer", correct: false},
+            {text:"A car accident", correct: false},
+            {text:"Poisoned", correct: true},
+            {text:"Fever", correct: false},
+            {text:"Fell off a tree", correct: false},
         ]
     },
 
     {
-        question: "In what month did I start learning how to code?",
+        question: "Iwan Rheon, who played Ramsay Bolton, was almost cast as which character?",
         answers: [
-            {text:"June", correct: false},
-            {text:"May", correct: true},
-            {text:"March", correct: false},
-            {text:"August", correct: false},
+            {text:"Mark", correct: false},
+            {text:"Jon Snow", correct: true},
+            {text:"The Wall", correct: false},
+            {text:"Amy", correct: false},
         ]
     },
 
     {
-        question: "What was the first programming language I learnt?",
+        question: "What is the name of Jon Snow’s Direwolf?",
         answers: [
-            {text:"JavaScript", correct: false},
-            {text:"C#", correct: false},
-            {text:"Python", correct: false},
-            {text:"C", correct: true},
-            {text:"HTML", correct: false},
+            {text:"Direwolf", correct: false},
+            {text:"Ciara", correct: false},
+            {text:"John legend", correct: false},
+            {text:"Ghost", correct: true},
+            {text:"Ben", correct: false},
         ]
     },
 
     {
-        question: "What was the second programming language I learnt?",
+        question: "Who was responsible for the creation of the Night King?",
         answers: [
-            {text:"JavaScript", correct: false},
-            {text:"C#", correct: false},
-            {text:"Python", correct: true},
-            {text:"C", correct: false},
-            {text:"HTML", correct: false},
+            {text:"Me", correct: false},
+            {text:"The dragons", correct: false},
+            {text:"The Children of the Forest", correct: true},
+            {text:"Jon snow", correct: false},
+            {text:"Littlefinger", correct: false},
         ]
     },
 
     {
-        question: "Where did I learn my first coding language?",
+        question: "What is the very first episode of game of thrones season 7 called?",
         answers: [
-            {text:"Free code camp", correct: false},
-            {text:"Khanacademy", correct: false},
-            {text:"Codecademy", correct: false},
-            {text:"HarvardX CS50", correct: true},
-            {text:"StandfordOnline Computer Science 101", correct: false},
+            {text:"The sun is coming", correct: false},
+            {text:"Autumn is here", correct: false},
+            {text:"The end", correct: false},
+            {text:"Winter is Coming", correct: true},
+            {text:"Queen of fire", correct: false},
         ] 
     },
 
     {
-        question: "Where did I learnt how to code with JavaScript?",
+        question: "Master of Coin Lord Petyr Baelish was also known by what name?",
         answers: [
-            {text:"Free code camp", correct: false},
-            {text:"Khanacademy", correct: false},
-            {text:"Codecademy", correct: false},
-            {text:"Udacity", correct: false},
-            {text:"W3school", correct: true},
+            {text:"Cersi", correct: false},
+            {text:"Daenerys", correct: false},
+            {text:"Hordor", correct: false},
+            {text:"jaemi", correct: false},
+            {text:"Littlefinger", correct: true},
         ]
     },
 
     {
-        question: "Where did I learn how to be comfortable in coding with JavaScript?",
+        question: "What is the capital of the Uk?",
         answers: [
-            {text:"Free code camp", correct: false},
-            {text:"Khanacademy", correct: true},
-            {text:"Codecademy", correct: false},
-            {text:"Udacity", correct: false},
-            {text:"W3school", correct: false},
+            {text:"United kingdom", correct: false},
+            {text:"London", correct: true},
+            {text:"USA", correct: false},
+            {text:"Wolverhampton", correct: false},
+            {text:"Europe", correct: false},
         ]
     },
 ] 
