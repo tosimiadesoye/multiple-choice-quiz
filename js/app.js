@@ -140,7 +140,7 @@ let displayStart = () =>{
     let p1 = document.createElement("p")
     p1.textContent = "This application askes random questions"
     let p2 = document.createElement("p")
-    p2.textContent = `Total number of questions is ${lengthArray}`
+    p2.textContent = `Total number of questions are ${lengthArray}`
     let startButton = document.createElement("button")
     startButton.className = "start"
     startButton.textContent = "start"
