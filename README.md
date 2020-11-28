@@ -1,6 +1,6 @@
 # multiple-choice-quiz
 
-https://github.com/tosimiadesoye/multiple-choice-quiz
+https://tosimiadesoye.github.io/multiple-choice-quiz/
 
 ## Table of contents
 * [General info](#general-info)
